@@ -12,8 +12,12 @@ const HomeMain = () => {
     return (
         <div
             style={style}
-            className='sm:h-[800px]  w-full h-[100px] '>
-          
+            className='sm:h-[calc(100vh-5rem)]  w-full h-[100px] '>
+                <div className='flex justify-center items-center sm:h-[calc(100vh-5rem)]   flex-col text-indigo-900 text-5xl  '>
+            <h2 className='animate-pulse'>Some text</h2>
+            <h4 className='animate__animated animate__backInUp'>Test</h4>
+            <h4>By ANDRIY SOROKA</h4>
+            </div>
         </div>
        
 
