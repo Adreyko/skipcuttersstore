@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom'
 const LoginForm = () => {
     return (
         
+        
         <form className=" flex  h-[calc(100vh-5rem)] flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12 rext-gray-800 antialiased sm:pb-[250px]">
             <div className="mx-auto max-w-md">
                 <span className='text-2xl font-light'>Увійдіть у ваш аккаунт</span>
