@@ -18,6 +18,7 @@ const RegForm = () => {
     const [emailError, setEmailError] = useState('Ел. адреса не може бути пустою')
     const [passwordError, setPasswordError] = useState('Пароль не може бути пустим')
     const [loginError, setLoginError] = useState('Логін не може бути пустим')
+    const [buttonDisabled,setButtonDisabled]  = useState(true)
 
 
 
@@ -40,6 +41,7 @@ const passwordHandle = (e) =>{
     }
     else{
         setPasswordError('')
+        setButtonDisabled(false)
     }
 }
 
@@ -85,11 +87,11 @@ const loginHandle = (e) =>{
 
 
     return (
-        <form className=" flex  h-[calc(100vh-5rem)] flex-col justify-center overflow-hidden bg-gray-50 py-6 px-8 sm:py-12 text-gray-800 antialiased sm:pb-[200px]">
+        <form className=" flex  h-[calc(100vh-5rem)] flex-col justify-center overflow-hidden bg-some py-6 px-8 sm:py-12 text-gray-800 antialiased sm:pb-[200px]">
             <div className="mx-auto max-w-md">
                 <span className='text-2xl font-light flex justify-center text-center'>Реєстрація</span>
                 <div className='mt-4 bg-white shadow-md rounded-lg'>
-                    <div className="h-2 bg-red-400 rounded-t-md"></div>
+                    <div className="h-2 bg-yellow-900 rounded-t-md"></div>
                     <div className="px-8 py-6">
                         <label className='block font-semibold'>Логін</label>
                         {(loginDirty && loginError) && <div className='text-red-500 w-[257px]'>{loginError}</div>}
@@ -101,7 +103,7 @@ const loginHandle = (e) =>{
                         <label className='block mt-3 font-semibold'>Пароль</label>
                         <input onChange={(e)=>passwordHandle(e)} value={password} onBlur={e => blurHandle(e)} type="password" name='password' placeholder='пароль' className='border w-full h-5 px-3 py-5 mt-2 hover:outline-none  focus:outline-none focus:ring-1 focus:ring-red-400 rounded-md' />
                         <div className="flex justify-between items-baseline">
-                            <button type='submit' className='mt-4 bg-red-500 text-white py-2 px-6 rounded-md red:bg-indigo-600'>Увійти
+                            <button disabled={buttonDisabled} type='submit' className='mt-4 bg-yellow-900 disabled:bg-gray-300 text-white py-2 px-6 rounded-md red:bg-indigo-600'>Увійти
                             </button>
                             <Link className='px-2' to='/logIn'>У мене є аккаунт</Link>
                         </div>

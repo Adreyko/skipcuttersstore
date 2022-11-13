@@ -5,19 +5,27 @@ const FormModal = () => {
     const [callAgreed, setCallAgreed] = useState(false)
     const [helpInfo, setHelpInfo] = useState({
         name: '',
-        phoneNumber: ''
+        email: ''
     })
     const url = '';
     const agreeChange = async (e) => {  
         e.preventDefault()
         await axios.post(url, {
             name: helpInfo.name,
-            phoneNumber: helpInfo.phone
+            email: helpInfo.email
         })
         setCallAgreed(prev => !prev)
     }
 
-
+    // const emailHandle = (e) =>{
+    //     setEmail(e.target.value)
+    //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    //     if(!re.test(String(e.target.value).toLowerCase())){
+    //         setEmailError('Некорректний емейл')
+    //     }else{
+    //         setEmailError('')
+    //     }
+    // }
 
     const handleChange = (event) => {
         setHelpInfo(prevFormData => {
@@ -37,7 +45,7 @@ const FormModal = () => {
 
     return (
 
-        <div className='bg-white w-56 p6 rounded shadow-sm'>
+        <div className='bg-some w-56 p6 rounded shadow-sm'>
             {!callAgreed ?    <form >
                 <label className='text-gray-700'>Ім'я</label>
                 <input
@@ -53,9 +61,9 @@ const FormModal = () => {
                     type='tel'
                     onChange={handleChange}
                     name='phoneNumber'
-                    value={helpInfo.phoneNumber}
+                    value={helpInfo.email}
                 />
-                <button onClick={(e) => agreeChange(e)} type='submit' className='bg-black-500 w-full text-white-500 py-2 rounded-5 hover:bg-black-900 transition-colors'> Подзвоніть мені</button>
+                <button onClick={(e) => agreeChange(e)} type='submit' className='bg-black-500 w-full text-white-500 py-2 rounded-5 hover:bg-black-900 transition-colors'> Ел.Адреса</button>
             </form> : 'huy'}
          
         </div>

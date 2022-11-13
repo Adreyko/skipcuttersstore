@@ -6,22 +6,40 @@ const Header = () => {
     const [showModal, setShowModal] = useState(false)
     return (
         <>
-            <header className='bg-red-700 sm:h-20   w-[100%] h-[100px] text-gray-100 sm:flex justify-between'>
-                <Link className='font-bold p-5 ml-[200px]' to='/'> Logo </Link>
-                <nav>
-                    <ul className='flex justify-between p-5 w-96 mr-[250px] '>
-                        <li className='p-2 active:text-slate-400 hover:underline'><Link to='/about'> Про нас </Link></li>
-                        <li className='p-2 active:text-slate-400  hover:underline'><Link to='/logIn'> Увійти </Link></li>
-                        <li><Link to='/cart'><i className=" active:text-slate-400  p-2 ri-shopping-cart-2-line text-[25px] ">
-                        </i></Link></li>
-                        <li className='cursor-pointer border-2 text-center  py-2 px-[10px] hover:bg-slate-100 hover:text-red-500 rounded-[200px]' onClick={() => setShowModal(true)}>Подзвоніть мені</li>
+            <header className=' flex items-center justify-between bg-some sm:h-32   w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
+                <nav className=''>
+                    <ul className='flex justify-between  items-center  mt-[5px]   '>
+                        <li className='flex items-center justify-center mr-[50px]'>
+                            <Link className='font-bold text-2xl ' to='/'> Cactus </Link>
+                            <img className='h-16' src=".//images/scotter.png" alt="" />
+                        </li>
+                        <li className='active:text-slate-400 mr-[20px]'><Link to='/about'> About </Link></li>
+                        <li className=' active:text-slate-400 mr-[20px] '><Link >Map</Link></li>
+                        <li><Link to='/cart'>Partners</Link></li>
                     </ul>
                 </nav>
+                <div>
+                    <ul className='flex  items-center justify-between  w-[250px] mt-[5px] '>
+                        <li
+                            className='cursor-pointer text-[30px]' onClick={() => setShowModal(true)}><i className="ri-mail-line"></i>
+                        </li>
+                        <li>
+                            <Link to='/cart'><i className=" active:text-slate-400   ri-shopping-cart-2-line text-[30px] ">
+                            </i>
+                            </Link>
+                        </li>
+                        <li
+                            className='border-2 hover:bg-black  hover:text-some border-black rounded-[40px] p-2 px-[30px]'><Link to='/logIn'> Login </Link>
+                        </li>
+                    </ul>
+                </div>
             </header>
 
             <CallUsModal visible={showModal} setShowModal={setShowModal}>
                 <FormModal />
             </CallUsModal>
+
+
         </>
     )
 }
