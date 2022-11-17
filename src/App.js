@@ -5,7 +5,8 @@ import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Registration from './pages/Registration/Registration';
 import Login from './pages/Login/Login';
-import HomeRentProducts from './pages/Home/components/HomeRentProducts/HomeRentProducts';
+import Cart from './pages/Cart/Cart';
+
 
 function App() {
 
@@ -17,10 +18,9 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/logIn' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
+        <Route path ='/cart' element={<Cart/>} />
       </Routes>
-<HomeRentProducts/>
     </div>
   );
 }
-
 export default App;

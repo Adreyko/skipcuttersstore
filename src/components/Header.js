@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import CallUsModal from './modals/CallUsModal'
+import CallUsModal from './modals/ReusableModals/ReusableModal'
 import FormModal from './modals/formModal'
+
 const Header = () => {
     const [showModal, setShowModal] = useState(false)
     return (
@@ -34,12 +35,9 @@ const Header = () => {
                     </ul>
                 </div>
             </header>
-
             <CallUsModal visible={showModal} setShowModal={setShowModal}>
                 <FormModal />
             </CallUsModal>
-
-
         </>
     )
 }

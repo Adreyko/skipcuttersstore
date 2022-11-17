@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'some' :'rgba(199,187,186,255)'
+        'some' :'rgba(199,187,186,255)',
+        'products' : 'rgb(105, 93, 97)'
       },
       fontFamily: {
         sourse :"'Mukta Malar', sans-serif",
