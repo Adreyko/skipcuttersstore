@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/skipcuttersstore.github.io/static/css/main.4f745568.css",
-    "main.js": "/skipcuttersstore.github.io/static/js/main.cd995139.js",
+    "main.js": "/skipcuttersstore.github.io/static/js/main.e30d9ed9.js",
     "index.html": "/skipcuttersstore.github.io/index.html",
     "main.4f745568.css.map": "/skipcuttersstore.github.io/static/css/main.4f745568.css.map",
-    "main.cd995139.js.map": "/skipcuttersstore.github.io/static/js/main.cd995139.js.map"
+    "main.e30d9ed9.js.map": "/skipcuttersstore.github.io/static/js/main.e30d9ed9.js.map"
   },
   "entrypoints": [
     "static/css/main.4f745568.css",
-    "static/js/main.cd995139.js"
+    "static/js/main.e30d9ed9.js"
   ]
 }
