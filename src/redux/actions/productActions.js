@@ -36,3 +36,10 @@ export const decrementProduct = (id) =>{
         payload:id
     }
 }
+
+
+export const deleteAllProduct = () =>{
+    return{
+        type: ActionTypes.REMOVE_ALL_PRODUCT_FROM_CART
+    }
+}

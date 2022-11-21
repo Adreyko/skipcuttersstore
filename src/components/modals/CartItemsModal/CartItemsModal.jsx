@@ -7,7 +7,7 @@ const CartItemsModal = ({ setHovered }) => {
 
   const renderItem = cartItems.map(item => {
     return (
-      <CartItemModal price={item.price} title={item.title} image={item.image} />
+      <CartItemModal key={item.id} price={item.price} title={item.title} image={item.image} />
     )
   })
 

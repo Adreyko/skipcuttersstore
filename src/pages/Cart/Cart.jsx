@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import CartItem from './CartItem'
 import EmptyCart from './EmptyCart'
-
-
+import { deleteAllProduct } from '../../redux/actions/productActions'
+import { useNavigate } from 'react-router-dom'
 
 
 const Cart = () => {
 
   const cartItem = useSelector(state => state.cart)
-
-
+const history = useNavigate()
+const dispatch = useDispatch()
 
   const renderCart = cartItem.map(item => {
     return (
@@ -55,14 +55,14 @@ const Cart = () => {
           cartItem.length > 0 ?
 <div>
 
-<button className='text-blue-300 absolute right-52'>Delete all</button>
+<button className='text-blue-300 absolute right-52' onClick={()=>dispatch(deleteAllProduct())}>Delete all</button>
 {renderCart}
 <div className='fixed 
        inset-x-0
        bottom-0
        flex justify-between bg-white h-32 px-48  items-center text-xl'>
   <div className='font-bold'>
-    <button className=' hover:text-blue-400 '> ← Back to shopping</button>
+    <button className=' hover:text-blue-400 ' onClick={()=>history(-1)}> ← Back to shopping</button>
   </div>
   <div className='font-bold text-xl'>
     <h1>TOTAL PRICE:{totalPrice()}$</h1>

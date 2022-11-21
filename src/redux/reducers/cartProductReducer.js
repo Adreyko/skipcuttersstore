@@ -26,6 +26,8 @@ export const cartProductReducer = (state = [], { type, payload }) => {
                 return item.id === payload ? { ...item, amount: item.amount > 1 ? item.amount-- : item.amount } : item
             })
             return decrementAmount
+            case ActionTypes.REMOVE_ALL_PRODUCT_FROM_CART:
+                return []
         default:
             return state
 

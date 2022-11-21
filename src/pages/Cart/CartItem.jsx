@@ -26,7 +26,7 @@ const CartItem = ({ title, image, price, id,amount}) => {
           <button onClick={()=>dispatch(incrementProduct(id))} className=' ml-[8px] ' >+</button>
         </div>
         <p className='ml-16 mr-12'>{productPrice.toFixed(2)}$</p>
-        <button onClick={() => dispatch(deleteProduct(id))}><i className="ri-delete-bin-5-line text-[40px]"></i></button>
+        <button onClick={() => dispatch(deleteProduct(id))}><i className="ri-delete-bin-5-line text-[40px]  "></i></button>
       </div>
 
 
