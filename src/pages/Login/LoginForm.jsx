@@ -14,7 +14,7 @@ const LoginForm = () => {
     return (
         
         
-        <form className=" flex  h-[calc(100vh-5rem)] flex-col justify-center overflow-hidden bg-some py-6 sm:py-12 rext-gray-800 antialiased sm:pb-[250px]">
+        <form className=" flex  h-[calc(100vh)] flex-col justify-center overflow-hidden bg-some py-6 sm:py-12 rext-gray-800 antialiased sm:pb-[250px]">
             <div className="mx-auto max-w-md">
                 <span className='text-2xl font-light'>Увійдіть у ваш аккаунт</span>
                 <div className='mt-4 bg-white shadow-md rounded-lg'>

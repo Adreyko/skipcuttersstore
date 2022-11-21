@@ -1,7 +1,8 @@
 import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
-    products: []
+    products: [],
+    
 }
 
 

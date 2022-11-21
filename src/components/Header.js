@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import CallUsModal from './modals/ReusableModals/ReusableModal'
+import ReusableModal from './modals/ReusableModals/ReusableModal'
 import FormModal from './modals/formModal'
+import { useSelector } from 'react-redux'
+import ReusableCartModal from './modals/ReusableModals/ReusableCartModal'
+import CartItemModal from './modals/CartItemsModal/CartItemsModal'
+import CartItemsModal from './modals/CartItemsModal/CartItemsModal'
+
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false)
+    const [hovered, setHovered] = useState(false)
+    const cartItems = useSelector(state=>state.cart)
+
+  const countCartItems = cartItems.length
     return (
         <>
-            <header className=' flex items-center justify-between bg-some sm:h-32   w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
+            <header className=' flex items-center justify-between bg-some sm:h-24 fixed  w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
                 <nav className=''>
                     <ul className='flex justify-between  items-center  mt-[5px]   '>
                         <li className='flex items-center justify-center mr-[50px]'>
@@ -24,10 +33,12 @@ const Header = () => {
                         <li
                             className='cursor-pointer text-[30px]' onClick={() => setShowModal(true)}><i className="ri-mail-line"></i>
                         </li>
-                        <li>
-                            <Link to='/cart'><i className=" active:text-slate-400   ri-shopping-cart-2-line text-[30px] ">
+                        <li className='flex' onMouseEnter={() => setHovered(true)} > 
+                         
+                            <Link to='/cart'><i className=" active:text-slate-400 ri-shopping-cart-2-line text-[30px] ">
                             </i>
                             </Link>
+                            <h1 className=' flex justify-center items-center relative right-3 text-[15px] text-white bg-gray-900 rounded-lg bottom-2 h-5 px-1 '>{countCartItems}</h1>
                         </li>
                         <li
                             className='border-2 hover:bg-black  hover:text-some border-black rounded-[40px] p-2 px-[30px]'><Link to='/logIn'> Login </Link>
@@ -35,9 +46,14 @@ const Header = () => {
                     </ul>
                 </div>
             </header>
-            <CallUsModal visible={showModal} setShowModal={setShowModal}>
-                <FormModal />
-            </CallUsModal>
+
+            <ReusableCartModal visible={hovered && cartItems.length > 0} setHovered={setHovered} >
+                <CartItemsModal setHovered={setHovered}/>
+            </ReusableCartModal>
+           
+            <ReusableModal visible={showModal} setShowModal={setShowModal}>
+                <FormModal  />
+            </ReusableModal>
         </>
     )
 }

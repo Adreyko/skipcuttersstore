@@ -23,3 +23,16 @@ export const deleteProduct = (id) =>{
     }
 }
 
+
+export const incrementProduct = (id) =>{
+    return{
+        type: ActionTypes.INCREMENT_AMOUNT_PRODUCT_CART,
+        payload:id
+    }
+}
+export const decrementProduct = (id) =>{
+    return{
+        type: ActionTypes.DECREMENT_AMOUNT_PRODUCT_CART,
+        payload:id
+    }
+}
