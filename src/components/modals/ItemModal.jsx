@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteProduct } from '../../redux/actions/productActions'
 import { addProduct } from '../../redux/actions/productActions'
 
-const ItemModal = ({ setShowModal, id, title, price, image, product, description }) => {
+const ItemModal = ({ setShowModal, id, title, price, image, product, deviceModel }) => {
  
 
 
@@ -37,9 +37,9 @@ const ItemModal = ({ setShowModal, id, title, price, image, product, description
       <img className=' w-[200px] p-2 ' alt='pic' src={`${image}`} />
       <h1 className=' flex w-[200px] items-center justify-center mt-2  text-center ' >{title}</h1>
       <p className='w-[200px] text-center pb-4'>
-        Maximum speed: 25 km/h
-        Power, W: 250 W</p>
+        {deviceModel}</p>
       <div className='flex items-center justify-between w-[500px] border-t-4 pt-4  '>
+
         <p className=' text-black-600 font-extrabold text-blue-400 pl-2'>{price}$</p>
         <button className='bg-white p-1 rounded-xl  mt-2 px-4 text-blue-400 text-xl hover:text-white font-bold hover:bg-blue-400'>
           {itemAction()}

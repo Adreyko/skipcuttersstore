@@ -16,12 +16,12 @@ const Header = () => {
   const countCartItems = cartItems.length
     return (
         <>
-            <header className=' flex items-center justify-between bg-some sm:h-24 fixed  w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
+            <header className=' flex items-center justify-between bg-blue-400 sm:h-24 fixed  w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
                 <nav className=''>
                     <ul className='flex justify-between  items-center  mt-[5px]   '>
                         <li className='flex items-center justify-center mr-[50px]'>
                             <Link className='font-bold text-2xl ' to='/'> Cactus </Link>
-                            <img className='h-16' src=".//images/scotter.png" alt="" />
+                            <img className='h-16' src={process.env.PUBLIC_URL + '/images/scotter.png'}  alt="" />
                         </li>
                         <li className='active:text-slate-400 mr-[20px]'><Link to='/about'> About </Link></li>
                         <li className=' active:text-slate-400 mr-[20px] '><Link >Map</Link></li>
