@@ -8,7 +8,7 @@ import { addProduct } from '../../../../redux/actions/productActions';
 
 
 
-const ItemProduct = ({ title, image, price, id, product, deviceModel}) => {
+const ItemProduct = ({ title, image, price, id, product, deviceModel }) => {
 
   const itemCart = useSelector(state => state.cart)
 
@@ -32,7 +32,7 @@ const ItemProduct = ({ title, image, price, id, product, deviceModel}) => {
     <>
       <div className='mt-12 flex items-center justify-center  font-monoton   '>
         <div>
-          <img className=' w-[200px] p-6  ' alt='pic' src={`${image}`} />
+          <img className=' w-[200px] p-6' alt='pic' src={`${image}`} />
 
           <h1 className=' flex w-[200px] items-center justify-center' >{title}</h1>
           <p className=' text-indigo-600 flex items-center justify-center'>{price}$</p>
@@ -40,7 +40,15 @@ const ItemProduct = ({ title, image, price, id, product, deviceModel}) => {
         </div>
       </div>
       <ReusableModal visible={showModal} setShowModal={setShowModal}>
-        <ItemModal deviceModel={deviceModel} title={title} image={image} price={price} product={product} id={id} setShowModal={setShowModal} />
+        <ItemModal
+          deviceModel={deviceModel}
+          title={title}
+          image={image}
+          price={price}
+          product={product}
+          id={id}
+          setShowModal={setShowModal}
+           />
       </ReusableModal>
     </>
   )

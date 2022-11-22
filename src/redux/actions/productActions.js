@@ -43,3 +43,11 @@ export const deleteAllProduct = () =>{
         type: ActionTypes.REMOVE_ALL_PRODUCT_FROM_CART
     }
 }
+
+
+export const setRentProducts = (rentProduct) =>{
+    return{
+        type: ActionTypes.SET_RENT_PRODUCTS,
+        payload : rentProduct
+    }
+}

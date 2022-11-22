@@ -14,7 +14,13 @@ const Cart = () => {
 
   const renderCart = cartItem.map(item => {
     return (
-      <CartItem key={item.id} image={item.image} title={item.title} price={item.price} id={item.id} amount={item.amount} />
+      <CartItem
+        key={item.id}
+        image={item.image}
+        title={item.title}
+        price={item.price}
+        id={item.id}
+        amount={item.amount} />
     )
   })
 
