@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/skipcuttersstore/static/css/main.751b4ab7.css",
-    "main.js": "/skipcuttersstore/static/js/main.f7563c34.js",
+    "main.css": "/skipcuttersstore/static/css/main.55951cad.css",
+    "main.js": "/skipcuttersstore/static/js/main.c60a687e.js",
     "index.html": "/skipcuttersstore/index.html",
-    "main.751b4ab7.css.map": "/skipcuttersstore/static/css/main.751b4ab7.css.map",
-    "main.f7563c34.js.map": "/skipcuttersstore/static/js/main.f7563c34.js.map"
+    "main.55951cad.css.map": "/skipcuttersstore/static/css/main.55951cad.css.map",
+    "main.c60a687e.js.map": "/skipcuttersstore/static/js/main.c60a687e.js.map"
   },
   "entrypoints": [
-    "static/css/main.751b4ab7.css",
-    "static/js/main.f7563c34.js"
+    "static/css/main.55951cad.css",
+    "static/js/main.c60a687e.js"
   ]
 }
