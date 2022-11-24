@@ -1,31 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { HashLink } from 'react-router-hash-link'
 import { Link } from 'react-router-dom'
 import ReusableModal from './modals/ReusableModals/ReusableModal'
-import FormModal from './modals/formModal'
+import FormModal from './modals/FormModal'
 import { useSelector } from 'react-redux'
 import ReusableCartModal from './modals/ReusableModals/ReusableCartModal'
-import CartItemModal from './modals/CartItemsModal/CartItemsModal'
-import CartItemsModal from './modals/CartItemsModal/CartItemsModal'
+import CartItemsModal from './modals/CartItemsModal/CartModalItems'
+
 
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false)
     const [hovered, setHovered] = useState(false)
-    const cartItems = useSelector(state=>state.cart)
+    const cartItems = useSelector(state => state.cart)
 
-  const countCartItems = cartItems.length
+   
+
+    const countCartItems = cartItems.length
     return (
         <>
-            <header className=' flex items-center justify-between bg-blue-400 sm:h-24 fixed  w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
+            <header className=' flex items-center justify-between bg-lightbrown sm:h-2 fixed  w-[100%] h-[100px]  sm:flex py-8 px-16 text-black text-xl '>
                 <nav className=''>
                     <ul className='flex justify-between  items-center  mt-[5px]   '>
                         <li className='flex items-center justify-center mr-[50px]'>
                             <Link className='font-bold text-2xl ' to='/'> Cactus </Link>
-                            <img className='h-16' src={process.env.PUBLIC_URL + '/images/scotter.png'}  alt="" />
+                            <img className='h-16' src={process.env.PUBLIC_URL + '/images/scotter.png'} alt="" />
                         </li>
-                        <li className='active:text-slate-400 mr-[20px]'><Link to='/about'> About </Link></li>
-                        <li className=' active:text-slate-400 mr-[20px] '><Link >Map</Link></li>
-                        <li><Link to='/cart'>Partners</Link></li>
+
+                        <li className='active:text-slate-400 mr-[20px]'><Link to=''> About </Link></li>
+                        <li className=' active:text-slate-400 mr-[20px] '><HashLink to='#map' smooth >Map</HashLink></li>
+                        <li><HashLink to='#partners'>Partners</HashLink></li>
                     </ul>
                 </nav>
                 <div>
@@ -33,8 +37,8 @@ const Header = () => {
                         <li
                             className='cursor-pointer text-[30px]' onClick={() => setShowModal(true)}><i className="ri-mail-line"></i>
                         </li>
-                        <li className='flex' onMouseEnter={() => setHovered(true)} > 
-                         
+                        <li className='flex' onMouseEnter={() => setHovered(true)} >
+
                             <Link to='/cart'><i className=" active:text-slate-400 ri-shopping-cart-2-line text-[30px] ">
                             </i>
                             </Link>
@@ -48,11 +52,11 @@ const Header = () => {
             </header>
 
             <ReusableCartModal visible={hovered && cartItems.length > 0} setHovered={setHovered} >
-                <CartItemsModal setHovered={setHovered}/>
+                <CartItemsModal setHovered={setHovered} />
             </ReusableCartModal>
-           
+
             <ReusableModal visible={showModal} setShowModal={setShowModal}>
-                <FormModal  />
+                <FormModal />
             </ReusableModal>
         </>
     )

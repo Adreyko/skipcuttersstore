@@ -31,17 +31,17 @@ const ItemModal = ({ setShowModal, id, title, price, image, product, deviceModel
 
   return (
     <div className='bg-white  border-4 border-some p-8 px-12 flex flex-col items-center justify-center rounded-2xl'>
-      <div onClick={() => setShowModal(false)} className='relative right-60  bg-blue-400 p-4 rounded-tly-full text-white clip-path-mypolygon rounded-tl-[10px] px-6 '>
+      <div onClick={() => setShowModal(false)} className='relative right-60  bg-some p-4 rounded-tly-full text-white clip-path-mypolygon rounded-tl-[10px] px-6 '>
         <button className='relative right-3 bottom-2 text-xl '>х</button>
       </div>
       <img className=' w-[200px] p-2 ' alt='pic' src={`${image}`} />
       <h1 className=' flex w-[200px] items-center justify-center mt-2  text-center ' >{title}</h1>
-      <p className='w-[200px] text-center pb-4'>
+      <p className='w-[300px] text-center pb-4 text-[15px]'>
         {deviceModel}</p>
       <div className='flex items-center justify-between w-[500px] border-t-4 pt-4  '>
 
-        <p className=' text-black-600 font-extrabold text-blue-400 pl-2'>{price}$</p>
-        <button className='bg-white p-1 rounded-xl  mt-2 px-4 text-blue-400 text-xl hover:text-white font-bold hover:bg-blue-400'>
+        <p className=' text-black-600 font-extrabold text-some pl-2'>{price}$</p>
+        <button className='bg-white p-1 rounded-xl  mt-2 px-4 text-some text-xl hover:text-white font-bold hover:bg-some'>
           {itemAction()}
         </button>
       </div>

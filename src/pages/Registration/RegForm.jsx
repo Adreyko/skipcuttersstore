@@ -87,7 +87,7 @@ const loginHandle = (e) =>{
 
 
     return (
-        <form className=" flex  h-[calc(100vh)] flex-col justify-center overflow-hidden bg-some py-6 px-8 sm:py-12 text-gray-800 antialiased sm:pb-[200px]">
+        <form className=" flex  h-[calc(100vh)] flex-col justify-center overflow-hidden bg-lightbrown py-6 px-8 sm:py-12 text-gray-800 antialiased sm:pb-[200px]">
             <div className="mx-auto max-w-md">
                 <span className='text-2xl font-light flex justify-center text-center'>Реєстрація</span>
                 <div className='mt-4 bg-white shadow-md rounded-lg'>

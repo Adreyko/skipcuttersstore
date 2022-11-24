@@ -16,7 +16,7 @@ const FormModal = () => {
         })
         setCallAgreed(prev => !prev)
     }
-console.log(setCallAgreed)
+
 
 
     const handleChange = (event) => {
@@ -36,10 +36,11 @@ console.log(setCallAgreed)
   
 
     return (
-
-        <div className='bg-some w-56 p6 rounded shadow-sm'>
-            {!callAgreed ?    <form >
-                <label className='text-gray-700'>Ім'я</label>
+        
+       
+        <div className='bg-white max-w-[400px] font-monoton border-4 border-some p-8 px-6 flex flex-col items-center justify-center rounded-2xl'>
+            {!callAgreed ?    <form className='flex flex-col items-center justify-center ' >
+                <label className='text-gray-700'>Name</label>
                 <input
                     className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4 rounded'
                     type='text'
@@ -47,19 +48,19 @@ console.log(setCallAgreed)
                     name='name'
                     value={helpInfo.name}
                 />
-                <label className='text-gray-700'>Номер телефону</label>
+                <label className='text-gray-700'>Email</label>
                 <input
                     className='w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4'
-                    type='tel'
+                    type='email'
                     onChange={handleChange}
-                    name='phoneNumber'
+                    name='email'
                     value={helpInfo.email}
                 />
-                <button onClick={(e) => agreeChange(e)} type='submit' className='bg-black-500 w-full text-white-500 py-2 rounded-5 hover:bg-black-900 transition-colors'> Ел.Адреса</button>
-            </form> : 'huy'}
+                <button onClick={(e) => agreeChange(e)} type='submit' className='hover:bg-some w-full rounded-xl bg-white border-2 border-some hover:text-white text-some flex justify-center text-white-500 py-2 rounded-5 hover:bg-black-900 transition-colors'> Sent me latter</button>
+            </form> : ''}
          
         </div>
-
+        
     )
 }
 

@@ -44,10 +44,3 @@ export const deleteAllProduct = () =>{
     }
 }
 
-
-export const setRentProducts = (rentProduct) =>{
-    return{
-        type: ActionTypes.SET_RENT_PRODUCTS,
-        payload : rentProduct
-    }
-}

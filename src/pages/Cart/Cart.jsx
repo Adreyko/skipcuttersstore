@@ -69,13 +69,13 @@ const Cart = () => {
        bottom-0
        flex justify-between bg-white h-32 px-48  items-center text-xl'>
               <div className='font-bold'>
-                <button className=' hover:text-blue-400 ' onClick={() => history(-1)}> ← Back to shopping</button>
+                <button className=' hover:text-some ' onClick={() => history(-1)}> ← Back to shopping</button>
               </div>
               <div className='font-bold text-xl'>
                 <h1 className='flex '>TOTAL PRICE: {<h1 className='text-indigo-600 ml-1'>{totalPrice()}$</h1>}</h1>
               </div>
               <div>
-                <button className='  text-blue-400 font-bold hover:bg-blue-400 hover:text-white p-2 px-4 rounded-xl '>Order</button>
+                <button className='  text-some font-bold hover:some hover:text-white hover:bg-some p-2 px-4 rounded-xl '>Order</button>
               </div>
             </div>
           </div>
